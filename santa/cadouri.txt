@@ -88,13 +88,3 @@ Domonoes
 Paints
 10
 33
-
-
-
-
-
-
-
-nume jucarie
-pret jucarie
-cantitate jucarie
