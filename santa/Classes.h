@@ -18,7 +18,13 @@ class Jucarie
 		int getAmount() { return this->cantitate; }
 		double getPrice() { return this->pret; }
 
+		void setName(string nume) { this->nume = nume; }
+		void setAmount(int cantitate) { this->cantitate = cantitate; }
+		void setPrice(double pret) { this->pret = pret; }
+
 		void removeFromInventory();
+
+		void Afisare(const Jucarie& j);
 
 		friend class Cadou;
 
@@ -34,6 +40,11 @@ class Jucarie
 	void Jucarie::removeFromInventory()
 	{
 		this->cantitate--;
+	}
+
+	void Jucarie::Afisare(const Jucarie& j)
+	{
+		cout << " nume: " << j.nume << "\n cantitate: " << j.cantitate << "\n pret: " << j.pret << " $\n";
 	}
 	//---------------------------Copil & elemente derivate--------------------------
 	class Copil

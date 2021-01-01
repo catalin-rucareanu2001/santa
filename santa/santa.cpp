@@ -12,6 +12,7 @@ void Cerinta()
 	cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
 	cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa ( minim 4 tari ).\n";
 }
+
 void AfisareScrisori(vector <Classes::Scrisoare> s)
 {
 	int i = 1;
@@ -33,6 +34,15 @@ void AfisareDrum(vector <Classes::Drum> drumul)
 	cout << total << " Km\n";
 }
 
+void AfisareJucarii(vector <Classes::Jucarie> juc)
+{
+	for (Classes::Jucarie j : juc)
+	{
+		j.Afisare(j);
+		cout << endl;
+	}
+}
+
 int main()
 {
 	
@@ -44,11 +54,17 @@ int main()
 	vector <Classes::Scrisoare> scris = Executare::CitireScrisori(scris);
 	AfisareScrisori(scris);
 
+	cout << endl << "Lista jucariilor din inventar:" << endl << endl;
+
+	vector <Classes::Jucarie> juc = Executare::CitireJucarii(juc);
+	AfisareJucarii(juc);
+
 	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
 
 	vector <Classes::Drum> drumul = Executare::AflareDrum();
 	AfisareDrum(drumul);
 
+	
 
 
 

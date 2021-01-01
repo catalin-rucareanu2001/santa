@@ -156,4 +156,40 @@ namespace Executare
 		}
 		return drumul;
 	}
+
+	vector <Classes::Jucarie> CitireJucarii(const vector <Classes::Jucarie>& jucarie)
+	{
+		string fisier = "cadouri.txt";
+		vector <Classes::Jucarie> juc;
+		Classes::Jucarie j;
+		ifstream mf1(fisier);
+		string line;
+		int nr;
+		try
+		{
+			if (mf1.is_open())
+			{
+				while (getline(mf1, line))
+				{
+					j.setName(line);
+					mf1 >> nr;
+					j.setPrice(nr);
+					mf1 >> nr;
+					j.setAmount(nr);
+					getline(mf1, line);
+					juc.push_back(j);
+				}
+			}
+			else
+			{
+				throw fisier;
+			}
+			return juc;
+		}
+		catch (string fisier)
+		{
+			cout << "Nu exista fisierul cu denumirea " << fisier << endl;
+			exit(404);
+		}
+	}
 }
