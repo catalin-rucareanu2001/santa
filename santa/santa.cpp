@@ -34,7 +34,7 @@ int main()
 	Executare::CitireBasic(&c_naugthy, &c_good);
 	//cout << "\nCadou pt copiii cuminti: " << c_good << "\nCadou pt copiii obraznici: " << c_naugthy<<"\n";
 
-
+	
 
 
 

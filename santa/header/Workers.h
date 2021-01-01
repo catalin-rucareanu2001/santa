@@ -18,4 +18,7 @@ namespace Workers
 	Worker::~Worker()
 	{
 	}
+	//mosu
+	//elf
+	//trol
 }
