@@ -1,14 +1,10 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
 
 using namespace std;
 
 namespace Classes
 {
 	//-------------------------------Elemente din --------------------------------
-	class Jucarie
+class Jucarie
 	{
 	private:
 		string nume;

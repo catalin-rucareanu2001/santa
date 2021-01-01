@@ -1,6 +1,4 @@
 
-#include "Classes.h"
-
 namespace Executare
 {
 	vector <Classes::Scrisoare> CitireScrisori(const vector <Classes::Scrisoare>& cop)

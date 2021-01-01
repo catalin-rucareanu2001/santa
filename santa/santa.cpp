@@ -1,36 +1,16 @@
 // santa.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "Executare.h"
-//citire din fisier
-	/*
-	ifstream mf1("Mosu1.txt");
-	string line;
-	if (mf1.is_open())
-	{
-		while (getline(mf1, line))
-		{
-
-			cout << line << endl;
-
-		}
-	}
-	else
-	{
-		cout << "nu exista\n";
-	}
-	*/
-	//using namespace std;
-
+#include "IncNecesar.h"
 
 void Cerinta()
 {
 	cout << "\n\tCERINTA:\n\n";
-	cout << "1] Afisati scrisorile a minim 5 copii.\n";
+	cout << "1] Afisati scrisorile copiilor ( minim 5 copii ).\n";
 	cout << "2] Sa se afiseze fiecare copil ce cadou va primi.\n";
 	cout << "3] Sa se afiseze cate ambalaje pentru fete si cate ambalaje pentru baieti au folosit trolii.\n";
 	cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
-	cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa.\n";
+	cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa ( minim 4 tari ).\n";
 }
 void AfisareScrisori(vector <Classes::Scrisoare> s)
 {
@@ -52,20 +32,30 @@ void AfisareDrum(vector <Classes::Drum> drumul)
 	}
 	cout << total << " Km\n";
 }
+
 int main()
 {
-	vector <Classes::Scrisoare> scris = Executare::CitireScrisori(scris);
+	
 	Cerinta();
 	cout << endl << endl << "\tREZOLVARE:" << endl << endl;
+
 	cout << "1] Scrisorile copiilor sunt:" << endl << endl;
 
+	vector <Classes::Scrisoare> scris = Executare::CitireScrisori(scris);
 	AfisareScrisori(scris);
 
 	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
-	vector <Classes::Drum> drumul = Executare::AflareDrum();
 
+	vector <Classes::Drum> drumul = Executare::AflareDrum();
 	AfisareDrum(drumul);
 
+
+
+
+
+
+	scris.clear();
+	drumul.clear();
 }
 
 

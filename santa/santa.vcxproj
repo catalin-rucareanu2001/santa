@@ -144,6 +144,8 @@
   <ItemGroup>
     <ClInclude Include="Executare.h" />
     <ClInclude Include="Classes.h" />
+    <ClInclude Include="IncNecesar.h" />
+    <ClInclude Include="Workers.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Basic.txt" />
