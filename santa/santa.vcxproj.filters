@@ -34,19 +34,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Mosu.txt">
+    <Text Include="txt\Mosu.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Orase.txt">
+    <Text Include="txt\Orase.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Scrisori.txt">
+    <Text Include="txt\Scrisori.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Basic.txt">
+    <Text Include="txt\Basic.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="cadouri.txt">
+    <Text Include="txt\Cadouri.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

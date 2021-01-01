@@ -148,11 +148,11 @@
     <ClInclude Include="header\Workers.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Basic.txt" />
-    <Text Include="cadouri.txt" />
-    <Text Include="Mosu.txt" />
-    <Text Include="Orase.txt" />
-    <Text Include="Scrisori.txt" />
+    <Text Include="txt\Basic.txt" />
+    <Text Include="txt\Cadouri.txt" />
+    <Text Include="txt\Mosu.txt" />
+    <Text Include="txt\Orase.txt" />
+    <Text Include="txt\Scrisori.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

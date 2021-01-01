@@ -30,7 +30,9 @@ int main()
 	vector <Classes::Drum> drumul = Executare::AflareDrum();
 	Executare::AfisareDrum(drumul);
 
-	
+	string c_naugthy, c_good;
+	Executare::CitireBasic(&c_naugthy, &c_good);
+	//cout << "\nCadou pt copiii cuminti: " << c_good << "\nCadou pt copiii obraznici: " << c_naugthy<<"\n";
 
 
 

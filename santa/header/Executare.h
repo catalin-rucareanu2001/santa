@@ -195,7 +195,28 @@ namespace Executare
 		}
 	}
 
-
+	void CitireBasic( string* Cadou_naugthy, string* Cadou_good)
+	{
+		string fisier = path1 + "Basic.txt";
+		ifstream mf1(fisier);
+		try
+		{
+			if (mf1.is_open())
+			{
+				getline(mf1, *Cadou_good);
+				getline(mf1, *Cadou_naugthy);
+			}
+			else
+			{
+				throw fisier;
+			}
+		}
+		catch (string fisier)
+		{
+			cout << "\nNu exista fisierul cu denumirea " << fisier << endl;
+			exit(404);
+		}
+	}
 
 
 
