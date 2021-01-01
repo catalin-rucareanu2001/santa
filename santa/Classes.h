@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace pornire
+namespace Classes
 {
 	//-------------------------------Elemente din --------------------------------
 	class Jucarie

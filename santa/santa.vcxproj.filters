@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pornire.h">
+    <ClInclude Include="Executare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Executare.h">
+    <ClInclude Include="Classes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -32,20 +32,20 @@ void Cerinta()
 	cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
 	cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa.\n";
 }
-void AfisareScrisori(vector <pornire::Scrisoare> s)
+void AfisareScrisori(vector <Classes::Scrisoare> s)
 {
 	int i = 1;
-	for (pornire::Scrisoare c : s)
+	for (Classes::Scrisoare c : s)
 	{
 		cout << " " << i++ << ". ";
 		c.Afisare(c);
 	}
 }
 
-void AfisareDrum(vector <pornire::Drum> drumul)
+void AfisareDrum(vector <Classes::Drum> drumul)
 {
 	int total = 0;
-	for (pornire::Drum dr : drumul)
+	for (Classes::Drum dr : drumul)
 	{
 		cout << dr.getOras() << " - ";
 		total += dr.getDist();
@@ -54,7 +54,7 @@ void AfisareDrum(vector <pornire::Drum> drumul)
 }
 int main()
 {
-	vector <pornire::Scrisoare> scris = Executare::CitireScrisori(scris);
+	vector <Classes::Scrisoare> scris = Executare::CitireScrisori(scris);
 	Cerinta();
 	cout << endl << endl << "\tREZOLVARE:" << endl << endl;
 	cout << "1] Scrisorile copiilor sunt:" << endl << endl;
@@ -62,7 +62,7 @@ int main()
 	AfisareScrisori(scris);
 
 	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
-	vector <pornire::Drum> drumul = Executare::AflareDrum();
+	vector <Classes::Drum> drumul = Executare::AflareDrum();
 
 	AfisareDrum(drumul);
 

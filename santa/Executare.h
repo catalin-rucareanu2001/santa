@@ -1,11 +1,11 @@
 
-#include "pornire.h"
+#include "Classes.h"
 
 namespace Executare
 {
-	vector <pornire::Scrisoare> CitireScrisori(const vector <pornire::Scrisoare>& cop)
+	vector <Classes::Scrisoare> CitireScrisori(const vector <Classes::Scrisoare>& cop)
 	{
-		vector < pornire::Scrisoare> copii;
+		vector < Classes::Scrisoare> copii;
 		string fisier = "Scrisori.txt";
 		ifstream mf1(fisier);
 		string nume;
@@ -32,7 +32,7 @@ namespace Executare
 						list.push_back(line);
 						getline(mf1, line);
 					}
-					pornire::Scrisoare cop(nume, prenume, oras, age, culoare);
+					Classes::Scrisoare cop(nume, prenume, oras, age, culoare);
 					cop.setCuloare(culoare);
 					cop.setLista(list);
 					list.clear();
@@ -53,10 +53,10 @@ namespace Executare
 
 	}
 
-	vector <pornire::Orase> CitireOrase(const vector <pornire::Orase>& orasel)
+	vector <Classes::Orase> CitireOrase(const vector <Classes::Orase>& orasel)
 	{
-		vector <pornire::Orase> orasele;
-		pornire::Orase  oras;
+		vector <Classes::Orase> orasele;
+		Classes::Orase  oras;
 		string fisier = "Orase.txt";
 		ifstream mf1(fisier);
 		string name;
@@ -97,16 +97,16 @@ namespace Executare
 
 	}
 
-	vector <pornire::Drum> AflareDrum()
+	vector <Classes::Drum> AflareDrum()
 	{
-		vector <pornire::Orase> ooo = CitireOrase(ooo);
-		for (pornire::Orase o : ooo)
+		vector <Classes::Orase> ooo = CitireOrase(ooo);
+		for (Classes::Orase o : ooo)
 		{
 			o.Afis(o);
 			cout << endl;
 		}
-		pornire::Drum dr;
-		vector <pornire::Drum> drumul;
+		Classes::Drum dr;
+		vector <Classes::Drum> drumul;
 		int min, pozm, poz;
 		min = ooo.at(0).getDist(0);
 		for (int i = 1; i < ooo.size(); i++)

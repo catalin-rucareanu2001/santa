@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Executare.h" />
-    <ClInclude Include="pornire.h" />
+    <ClInclude Include="Classes.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Basic.txt" />
