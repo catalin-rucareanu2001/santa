@@ -2,6 +2,7 @@
 namespace Executare
 {
 	string path1 = "txt/";
+	
 	vector <Classes::Scrisoare> CitireScrisori(const vector <Classes::Scrisoare>& cop)
 	{
 		vector < Classes::Scrisoare> copii;
