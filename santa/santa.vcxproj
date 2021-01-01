@@ -142,6 +142,7 @@
     <ClCompile Include="santa.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Executare.h" />
     <ClInclude Include="pornire.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

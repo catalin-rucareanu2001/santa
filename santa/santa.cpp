@@ -1,8 +1,8 @@
 // santa.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <fstream>
-#include "pornire.h"
+
+#include "Executare.h"
 //citire din fisier
 	/*
 	ifstream mf1("Mosu1.txt");

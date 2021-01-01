@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iterator>
-#include <algorithm> // for find_if
+#include <fstream>
 
 using namespace std;
 namespace pornire
@@ -250,82 +249,70 @@ namespace pornire
 		}
 	};
 	//-----------------------------Clase pt oras & drum-----------------------------
-
-	struct CityNode
+	class Orase
 	{
 	public:
-		string nume;
-		double dst;
-		CityNode* path;
-
-		CityNode(string nume, double dst);
-
-		~CityNode();
-	};
-
-	CityNode::CityNode(string nume = "", double dst = 0.0)
-	{
-		this->nume = nume;
-		this->dst = dst;
-		this->path = nullptr;
-	}
-
-	CityNode::~CityNode()
-	{
-		delete this->path;
-	}
-
-	class RoadGraph
-	{
-	private:
-		static RoadGraph* start;
-		RoadGraph(vector<string> new_start);
-
-	public:
-		vector<CityNode*> starting_city;
-
-		static RoadGraph* makeRoads(vector<string> new_start);
-
-		void addPath(string start, string stop, double length);
-
-
-	};
-
-	RoadGraph* RoadGraph::start = nullptr;
-
-	RoadGraph::RoadGraph(vector<string> new_start)
-	{
-		for (int i = 0; i < new_start.size(); i++)
-		{
-			this->starting_city.push_back(new CityNode(new_start.at(i)));
+		void setNume(string nm) {
+			this->nume = nm;
 		}
-	}
-
-	RoadGraph* RoadGraph::makeRoads(vector<string> new_start = {})
-	{
-		if (start == nullptr)
-		{
-			start = new RoadGraph(new_start);
+		string getNume() {
+			return nume;
 		}
-
-		return start;
-	}
-
-	void RoadGraph::addPath(string start, string stop, double length)
-	{
-		vector<CityNode*>::iterator start_pos = find_if(this->starting_city.begin(), this->starting_city.end(), [&start](const CityNode* starter)
+		void setDist(vector <int> dt) {
 			{
-				return starter->nume == start;
+				this->dist = dt;
 			}
-		);
-
-		CityNode* aux = this->starting_city.at(start_pos - this->starting_city.begin());
-		while (aux->path != nullptr)
+		}
+		int getDist(int i)
 		{
-			aux = aux->path;
+			return dist.at(i);
+		}
+		void setVisited(int vs) {
+			this->visited = vs;
+		}
+		int getVisited()
+		{
+			return visited;
+		}
+		void Afis(const Orase& o);
+
+	private:
+		string nume;
+		vector <int> dist;
+		int visited;
+	};
+	void Orase::Afis(const Orase& o)
+	{
+		cout << o.nume << " ";
+		for (int i = 0; i < dist.size(); i++)
+		{
+			cout << dist.at(i) << " ";
 		}
 
-		aux->path = new CityNode(stop, length);
 	}
 
+	class Drum
+	{
+	public:
+		void SetOras(string city)
+		{
+			this->oras = city;
+		}
+		void SetDist(int dist)
+		{
+			this->dist = dist;
+		}
+		string getOras()
+		{
+			return oras;
+		}
+		int getDist()
+		{
+			return dist;
+		}
+
+	private:
+		int dist;
+		string oras;
+	};
 }
