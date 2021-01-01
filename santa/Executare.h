@@ -192,4 +192,49 @@ namespace Executare
 			exit(404);
 		}
 	}
+
+
+
+
+
+	void Cerinta()
+	{
+		cout << "\n\tCERINTA:\n\n";
+		cout << "1] Afisati scrisorile copiilor ( minim 5 copii ).\n";
+		cout << "2] Sa se afiseze fiecare copil ce cadou va primi.\n";
+		cout << "3] Sa se afiseze cate ambalaje pentru fete si cate ambalaje pentru baieti au folosit trolii.\n";
+		cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
+		cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa ( minim 4 tari ).\n";
+	}
+
+	void AfisareScrisori(vector <Classes::Scrisoare> s)
+	{
+		int i = 1;
+		for (Classes::Scrisoare c : s)
+		{
+			cout << " " << i++ << ". ";
+			c.Afisare(c);
+		}
+	}
+
+	void AfisareDrum(vector <Classes::Drum> drumul)
+	{
+		int total = 0;
+		for (Classes::Drum dr : drumul)
+		{
+			cout << dr.getOras() << " - ";
+			total += dr.getDist();
+		}
+		cout << total << " Km\n";
+	}
+
+	void AfisareJucarii(vector <Classes::Jucarie> juc)
+	{
+		for (Classes::Jucarie j : juc)
+		{
+			j.Afisare(j);
+			cout << endl;
+		}
+	}
+
 }
