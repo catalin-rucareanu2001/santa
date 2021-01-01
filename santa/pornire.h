@@ -4,9 +4,10 @@
 #include <fstream>
 
 using namespace std;
+
 namespace pornire
 {
-//-------------------------------Elemente din --------------------------------
+	//-------------------------------Elemente din --------------------------------
 	class Jucarie
 	{
 	private:
@@ -42,7 +43,7 @@ namespace pornire
 	class Copil
 	{
 	public:
-		Copil(string nume,string prenume, string oras, int varsta);
+		Copil(string nume, string prenume, string oras, int varsta);
 
 		string getName() { return this->nume; }
 		string getSurname() { return this->prenume; }
@@ -90,7 +91,7 @@ namespace pornire
 	{
 	public:
 		Scrisoare(string nume, string prenume, string oras, int varsta, string culoare);
-		Scrisoare(const Copil &copy);
+		Scrisoare(const Copil& copy);
 
 		~Scrisoare();
 
@@ -102,9 +103,9 @@ namespace pornire
 
 		bool operator ==(const Copil& c);
 
-		void Afisare(const Scrisoare &s);
+		void Afisare(const Scrisoare& s);
 
-		friend class Present; 
+		friend class Present;
 
 	private:
 		string culoare;
@@ -143,10 +144,10 @@ namespace pornire
 		}
 	}
 
-	void Scrisoare::Afisare(const Scrisoare &l)
+	void Scrisoare::Afisare(const Scrisoare& l)
 	{
-		cout << l.nume << " " << l.prenume << " " << l.varsta << " " << l.oras <<" "<<l.culoare<<" ";
-		for (int i = 0; i < l.lista.size()-1; i++)
+		cout << l.nume << " " << l.prenume << " " << l.varsta << " " << l.oras << " " << l.culoare << " ";
+		for (int i = 0; i < l.lista.size() - 1; i++)
 		{
 			cout << l.lista.at(i) << " ";
 		}
@@ -174,10 +175,10 @@ namespace pornire
 
 		void addToItems(Jucarie new_item);
 
-		void operator =(const Cadou& copy); 
+		void operator =(const Cadou& copy);
 		bool operator ==(const Scrisoare& l);
 
-		void Afisare(const Cadou &c);
+		void Afisare(const Cadou& c);
 	};
 
 	Cadou::Cadou(string nume = "", string prenume = "", string oras = "", int varsta = -1) : Copil{ nume, prenume, oras, varsta }
@@ -248,7 +249,7 @@ namespace pornire
 			}
 		}
 	};
-	//-----------------------------Clase pt oras & drum-----------------------------
+	//-------------------Clase pentru Orase si Drum
 	class Orase
 	{
 	public:
@@ -281,9 +282,10 @@ namespace pornire
 		vector <int> dist;
 		int visited;
 	};
+
 	void Orase::Afis(const Orase& o)
 	{
-		cout << o.nume << " ";
+		cout << " " << o.nume << " ";
 		for (int i = 0; i < dist.size(); i++)
 		{
 			cout << dist.at(i) << " ";

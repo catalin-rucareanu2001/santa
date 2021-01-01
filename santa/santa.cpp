@@ -2,7 +2,6 @@
 //
 
 #include "Executare.h"
-
 //citire din fisier
 	/*
 	ifstream mf1("Mosu1.txt");
@@ -21,12 +20,30 @@
 		cout << "nu exista\n";
 	}
 	*/
-using namespace std;
+	//using namespace std;
 
 
-int main()
+void Cerinta()
 {
-	vector <pornire::Drum> drumul = Executare::AflareDrum();
+	cout << "\n\tCERINTA:\n\n";
+	cout << "1] Afisati scrisorile a minim 5 copii.\n";
+	cout << "2] Sa se afiseze fiecare copil ce cadou va primi.\n";
+	cout << "3] Sa se afiseze cate ambalaje pentru fete si cate ambalaje pentru baieti au folosit trolii.\n";
+	cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
+	cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa.\n";
+}
+void AfisareScrisori(vector <pornire::Scrisoare> s)
+{
+	int i = 1;
+	for (pornire::Scrisoare c : s)
+	{
+		cout << " " << i++ << ". ";
+		c.Afisare(c);
+	}
+}
+
+void AfisareDrum(vector <pornire::Drum> drumul)
+{
 	int total = 0;
 	for (pornire::Drum dr : drumul)
 	{
@@ -34,7 +51,21 @@ int main()
 		total += dr.getDist();
 	}
 	cout << total << " Km\n";
-    
+}
+int main()
+{
+	vector <pornire::Scrisoare> scris = Executare::CitireScrisori(scris);
+	Cerinta();
+	cout << endl << endl << "\tREZOLVARE:" << endl << endl;
+	cout << "1] Scrisorile copiilor sunt:" << endl << endl;
+
+	AfisareScrisori(scris);
+
+	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
+	vector <pornire::Drum> drumul = Executare::AflareDrum();
+
+	AfisareDrum(drumul);
+
 }
 
 
