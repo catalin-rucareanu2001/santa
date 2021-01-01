@@ -1,8 +1,8 @@
 // santa.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-
 #include "Executare.h"
+
 //citire din fisier
 	/*
 	ifstream mf1("Mosu1.txt");
@@ -26,7 +26,14 @@ using namespace std;
 
 int main()
 {
-	
+	vector <pornire::Drum> drumul = Executare::AflareDrum();
+	int total = 0;
+	for (pornire::Drum dr : drumul)
+	{
+		cout << dr.getOras() << " - ";
+		total += dr.getDist();
+	}
+	cout << total << " Km\n";
     
 }
 

@@ -145,6 +145,13 @@
     <ClInclude Include="Executare.h" />
     <ClInclude Include="pornire.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Basic.txt" />
+    <Text Include="cadouri.txt" />
+    <Text Include="Mosu.txt" />
+    <Text Include="Orase.txt" />
+    <Text Include="Scrisori.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

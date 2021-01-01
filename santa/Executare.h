@@ -6,36 +6,46 @@ namespace Executare
     {
         vector <pornire::Orase> orasele;
         pornire::Orase  oras;
-        ifstream mf1("Orase.txt");
+        string fisier ="Orase.txt" ;
+        ifstream mf1(fisier);
         string name;
         int d;
         vector <int> di;
-        if (mf1.is_open())
+        try
         {
-            while (getline(mf1, name))
+            if (mf1.is_open())
             {
-
-                oras.setNume(name);
-                for (int i = 0; i < 6; i++)
+                while (getline(mf1, name))
                 {
-                    mf1 >> d;
 
-                    di.push_back(d);
+                    oras.setNume(name);
+                    for (int i = 0; i < 6; i++)
+                    {
+                        mf1 >> d;
+
+                        di.push_back(d);
+                    }
+                    oras.setDist(di);
+                    di.clear();
+                    oras.setVisited(0);
+                    getline(mf1, name);
+
+                    orasele.push_back(oras);
+
                 }
-                oras.setDist(di);
-                di.clear();
-                oras.setVisited(0);
-                getline(mf1, name);
-
-                orasele.push_back(oras);
-
+                return orasele;
             }
-            return orasele;
+            else
+            {
+                throw fisier;
+            }
         }
-        else
+        catch (string fisier)
         {
-            cout << "nu exista ";
+            cout << "Nu exista fisierul denumit: "<<fisier<<endl;
+            exit(404);
         }
+        
     }
     vector <pornire::Drum> AflareDrum()
     {
@@ -98,4 +108,5 @@ namespace Executare
         }
         return drumul;
     }
+ 
 }

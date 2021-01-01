@@ -27,4 +27,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Mosu.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Orase.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Scrisori.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Basic.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="cadouri.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
