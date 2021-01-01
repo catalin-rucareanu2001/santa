@@ -2,11 +2,11 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "header/Classes.h"
-#include "header/Executare.h"
-#include "header/Workers.h"
+#include "Classes.h"
+#include "Executare.h"
+#include "Workers.h"
 
-//string path1 = "header/";
+
 //citire din fisier
 	/*
 	ifstream mf1("Mosu1.txt");
