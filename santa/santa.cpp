@@ -5,7 +5,7 @@
 
 int main()
 {
-	
+	int choice;
 	Executare::Cerinta();
 	cout << endl << endl << "\tREZOLVARE:" << endl << endl;
 
@@ -14,17 +14,25 @@ int main()
 	vector <Classes::Scrisoare> scris = Executare::CitireScrisori(scris);
 	Executare::AfisareScrisori(scris);
 
-	cout << endl << "Lista jucariilor din inventar:" << endl << endl;
+	cout << endl << "Doriti sa vedeti inventarul elfilor?\n1]Da\n2]Nu" << endl << endl;
+	cin >> choice;
 
 	vector <Classes::Jucarie> juc = Executare::CitireJucarii(juc);
-	Executare::AfisareJucarii(juc);
 
+	if (choice == 1)
+	{
+		cout << endl << "Lista jucariilor din inventar:" << endl << endl;
+		Executare::AfisareJucarii(juc);
+	}
+	
 	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
 
 	vector <Classes::Drum> drumul = Executare::AflareDrum();
 	Executare::AfisareDrum(drumul);
 
 	
+
+
 
 
 
