@@ -20,16 +20,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Executare.h">
+    <ClInclude Include="header\Executare.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Classes.h">
+    <ClInclude Include="header\IncNecesar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Workers.h">
+    <ClInclude Include="header\Workers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IncNecesar.h">
+    <ClInclude Include="header\Classes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

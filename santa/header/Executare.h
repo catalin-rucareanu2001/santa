@@ -161,7 +161,7 @@ namespace Executare
 
 	vector <Classes::Jucarie> CitireJucarii(const vector <Classes::Jucarie>& jucarie)
 	{
-		string fisier = path1 + "cadouri.txt";
+		string fisier = path1 + "Cadouri.txt";
 		vector <Classes::Jucarie> juc;
 		Classes::Jucarie j;
 		ifstream mf1(fisier);
