@@ -2,7 +2,7 @@ Bahadur
 Waqar
 8
 alastru
-ELEPHANT
+Abu_Dhabi
 nintendo_switch
 Jenga
 play-Doh
@@ -11,7 +11,7 @@ Irfan
 Latifah
 16
 alastru
-ELEPHANT
+Ajman
 Catan
 Villanous
 D&D
@@ -22,7 +22,7 @@ Mostafa
 Bushra
 14
 alastru
-ELEPHANT
+Dubai
 Unstable_Unicorns
 Fox_in_the_Forest_Game
 Nerf
@@ -33,7 +33,7 @@ Fahima
 Hasna
 18
 roz
-ELEPHANT
+Sharjah
 Codenames_Board_Game
 Exploding_Kittens
 Cards_Against_Humanity
@@ -43,6 +43,6 @@ Rawda
 Aminah
 6
 roz
-ELEPHANT
+Fujairah
 Uno
 .
