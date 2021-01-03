@@ -24,7 +24,19 @@ int main()
 		cout << endl << "Lista jucariilor din inventar:" << endl << endl;
 		Executare::AfisareJucarii(juc);
 	}
-	
+
+	cout << endl << "Doriti sa vedeti Lista Mosului?\n1]Da\n2]Nu" << endl << endl;
+	cin >> choice;
+
+	vector <Classes::Mosu> mos = Executare::CitireMosu(mos);
+
+	if (choice == 1)
+	{
+		cout << endl << "Lista jucariilor din inventar:" << endl << endl;
+		Executare::AfisareListaMosu(mos);
+	}
+
+
 	cout << endl << "5] Traseul pe care l-a urmat Mos Craciun este:" << endl << endl;
 
 	vector <Classes::Drum> drumul = Executare::AflareDrum();
@@ -34,11 +46,13 @@ int main()
 	Executare::CitireBasic(&c_naugthy, &c_good);
 	//cout << "\nCadou pt copiii cuminti: " << c_good << "\nCadou pt copiii obraznici: " << c_naugthy<<"\n";
 
+
 	
 
 
 
 
+	mos.clear();
 	juc.clear();
 	scris.clear();
 	drumul.clear();

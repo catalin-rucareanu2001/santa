@@ -218,6 +218,61 @@ namespace Executare
 		}
 	}
 
+	vector <Classes::Mosu> CitireMosu(const vector <Classes::Mosu>& cop)
+	{
+		vector <Classes::Mosu> lista;
+		string fisier = path1 + "Mosu.txt";
+		ifstream mf1(fisier);
+		string nume;
+		string prenume;
+		int age;
+
+		string oras;
+		string line;
+		int cuminte;
+
+		try
+		{
+			if (mf1.is_open())
+			{
+				while (getline(mf1, nume))
+				{
+					getline(mf1, prenume);
+					mf1 >> age;
+					getline(mf1, line);
+					getline(mf1, oras);
+					getline(mf1, line);
+					if (!line.compare("Naughty"))
+					{
+						cout << " Naughty";
+						cuminte = 0;
+					}
+					else
+					{
+						cout << " Good";
+						cuminte = 1;
+					}
+					Classes::Mosu cop(nume, prenume, oras, age, cuminte);
+					lista.push_back(cop);
+
+				}
+
+			}
+			else
+			{
+				throw fisier;
+			}
+			return lista;
+		}
+		catch (string fisier)
+		{
+			cout << "Nu exista fisierul cu denumirea " << fisier << endl;
+			exit(404);
+		}
+	}
+
+
+
 
 
 	void Cerinta()
@@ -259,5 +314,15 @@ namespace Executare
 			cout << endl;
 		}
 	}
+
+	void AfisareListaMosu(vector <Classes::Mosu> s)
+	{
+		
+		for (Classes::Mosu m : s)
+		{
+			m.Afisare();
+		}
+	}
+
 
 }

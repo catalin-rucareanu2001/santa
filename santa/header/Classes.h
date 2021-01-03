@@ -228,8 +228,14 @@ class Jucarie
 
 	bool Cadou::operator ==(const Scrisoare& l)
 	{
-		if (this->nume == l.nume && this->prenume == l.prenume && this->oras == l.oras && this->varsta == l.varsta) return true;
-		else return false;
+		if (this->nume == l.nume && this->prenume == l.prenume && this->oras == l.oras && this->varsta == l.varsta)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	void Cadou::Afisare(const Cadou& c)
 	{
@@ -324,4 +330,23 @@ class Jucarie
 		int dist;
 		string oras;
 	};
+
+
+
+	class Mosu : public Copil
+	{
+	public:
+		Mosu(string nume, string prenume, string oras, int varsta, int cuminte);
+		void Afisare() {
+			cout << this->nume << " " << this->prenume << " " << this->oras << " " << this->varsta << " " << this->cuminte << endl;
+		}
+	private:
+		int cuminte;
+	};
+
+	Mosu::Mosu(string nume, string prenume, string oras, int varsta, int cuminte) : Copil{ nume,  prenume,  oras,  varsta }
+	{
+		this->cuminte = cuminte;
+	}
+
 }
