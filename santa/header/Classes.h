@@ -178,7 +178,7 @@ class Jucarie
 		vector<string> getItems() { return this->items; }
 		double getCost() { return this->cost; }
 
-		void setColour(string culoare) { this->culoare = culoare; }
+		void setColour(string culoare) {  this->culoare=culoare; }
 
 		void addToItems(Jucarie new_item);
 
@@ -225,7 +225,7 @@ class Jucarie
 		this->items = copy.items;
 		this->cost = copy.cost;
 	}
-
+	
 	bool Cadou::operator ==(const Scrisoare& l)
 	{
 		if (this->nume == l.nume && this->prenume == l.prenume && this->oras == l.oras && this->varsta == l.varsta)
@@ -331,7 +331,7 @@ class Jucarie
 		string oras;
 	};
 
-
+	//----------------------Mosu---------------------
 
 	class Mosu : public Copil
 	{
@@ -339,6 +339,17 @@ class Jucarie
 		Mosu(string nume, string prenume, string oras, int varsta, int cuminte);
 		void Afisare() {
 			cout << this->nume << " " << this->prenume << " " << this->oras << " " << this->varsta << " " << this->cuminte << endl;
+		}
+		int IsCuminte()
+		{
+			if (cuminte == 1)
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
 		}
 	private:
 		int cuminte;

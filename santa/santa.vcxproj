@@ -148,6 +148,7 @@
     <ClInclude Include="header\Workers.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Text.txt" />
     <Text Include="txt\Basic.txt" />
     <Text Include="txt\Cadouri.txt" />
     <Text Include="txt\Mosu.txt" />

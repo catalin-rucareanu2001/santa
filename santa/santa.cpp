@@ -2,6 +2,32 @@
 //
 
 #include "header/IncNecesar.h"
+template<class  T, class  U, typename V>
+Classes::Cadou IsEq2(T a, U b, V c)
+{
+
+	Classes::Cadou cadoul(a.getName(), a.getSurname(), a.getCity(), a.getAge());
+	string l;
+	cadoul.setColour(a.getCuloare());
+
+	for (int k = 0; k < a.getLista().size(); k++)
+	{
+		for (int j = 0; j < b.size(); j++)
+		{
+			if (a.getLista().at(k).compare(b.at(j).getName()) == 0)
+			{
+				if (cadoul.getCost() + b.at(j).getPrice() <= c && b.at(j).getAmount() - 1 >= 0)
+				{
+					cadoul.addToItems(b.at(j));
+					b.at(j).removeFromInventory();
+				}
+
+			}
+		}
+
+	}
+	return cadoul;
+}
 
 int main()
 {
@@ -32,7 +58,8 @@ int main()
 
 	if (choice == 1)
 	{
-		cout << endl << "Lista jucariilor din inventar:" << endl << endl;
+		cout << endl << "Lista Mosului:" << endl << endl;
+		cout << "Good = 1\nNaughty = 0\n";
 		Executare::AfisareListaMosu(mos);
 	}
 
@@ -45,12 +72,12 @@ int main()
 	string c_naugthy, c_good;
 	Executare::CitireBasic(&c_naugthy, &c_good);
 	//cout << "\nCadou pt copiii cuminti: " << c_good << "\nCadou pt copiii obraznici: " << c_naugthy<<"\n";
-
-
 	
-
-
-
+	vector<int> sum;
+	vector<Classes::Cadou> cad;
+	cad=Executare::Verificare(scris, mos, juc, &sum);
+	
+	
 
 	mos.clear();
 	juc.clear();

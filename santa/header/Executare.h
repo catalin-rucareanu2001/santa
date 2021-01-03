@@ -244,12 +244,12 @@ namespace Executare
 					getline(mf1, line);
 					if (!line.compare("Naughty"))
 					{
-						cout << " Naughty";
+						//cout << " Naughty";
 						cuminte = 0;
 					}
 					else
 					{
-						cout << " Good";
+						//cout << " Good";
 						cuminte = 1;
 					}
 					Classes::Mosu cop(nume, prenume, oras, age, cuminte);
@@ -324,5 +324,80 @@ namespace Executare
 		}
 	}
 
+	template<class  T, class  U, typename V>
+	Classes::Cadou IsEq2(T a, U b, V c)
+	{
 
+		Classes::Cadou cadoul(a.getName(), a.getSurname(), a.getCity(), a.getAge());
+		string l;
+		cadoul.setColour(a.getCuloare());
+
+		for (int k = 0; k < a.getLista().size(); k++)
+		{
+			for (int j = 0; j < b.size(); j++)
+			{
+				if (a.getLista().at(k).compare(b.at(j).getName()) == 0)
+				{
+					if (cadoul.getCost() + b.at(j).getPrice() <= c && b.at(j).getAmount() - 1 >= 0)
+					{
+						cadoul.addToItems(b.at(j));
+						b.at(j).removeFromInventory();
+						//cout << c<<" ";
+					}
+
+				}
+			}
+			//cout <<  " \n";
+		}
+		return cadoul;
+	}
+
+	template<class  T, class  U>
+	int IsEq1(T a, U b)
+	{
+		if (a.getCity().compare(b.getCity()) == 0 && a.getName().compare(b.getName()) == 0 && a.getSurname().compare(b.getSurname()) == 0 && a.getAge() == b.getAge())
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
+	vector<Classes::Cadou> Verificare(vector <Classes::Scrisoare> s, vector <Classes::Mosu> m, vector <Classes::Jucarie> jucarie , vector<int> *sum)
+	{
+		(*sum).push_back(1);
+		(*sum).push_back(1);
+		(*sum).push_back(1);
+		(*sum).push_back(1);
+		(*sum).push_back(1);
+		vector<Classes::Cadou> cad;
+		for (int i = 0; i < s.size(); i++)
+		{
+			for (int j = 0; j < m.size(); j++)
+			{
+				if (IsEq1(s.at(i), m.at(j)))
+				{
+					if (m.at(j).IsCuminte())
+					{
+						(*sum).at(i) = 100;
+						//cout << sum.at(i) << endl;
+					}
+					else
+					{
+						(*sum).at(i) = 10;
+					}
+					//cout << "copilul :" << m.at(i).getName() << " " << m.at(i).getSurname() << " \n";
+					cad.push_back(IsEq2(s.at(i), jucarie, (*sum).at(j)));
+				}
+			}
+		}
+		for (Classes::Cadou c : cad)
+		{
+			c.Afisare(c);
+			cout << endl;
+		}
+		return cad;
+	}
 }
