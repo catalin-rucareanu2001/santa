@@ -101,7 +101,7 @@ int main()
 	{
 		cout << acadele.at(i) << " acadele primeste: "<<scris.at(i).getName()<<" "<< scris.at(i).getSurname()<<"\n";
 	}
-	elful.setSuma();
+	elful.setSum();
 	/// <summary>
 	/// ex 3
 	/// </summary>
@@ -126,7 +126,7 @@ int main()
 	Workers::MissSanta msSanta;
 	msSanta.setAcad(elful.getAcadele());
 	msSanta.setCarb(trolul.getCarbune());
-	msSanta.setSuma(elful, trolul);
+	msSanta.setSum(elful, trolul);
 
 	cout<<"\nDoamna Craciun produce : "<<msSanta.getAcad()<<" acadele si : "<< msSanta.getCarb()<<" carbuni\n";
 	cout << "Suma extra este: " << msSanta.getSum()<<" $\n";

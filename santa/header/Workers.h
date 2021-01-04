@@ -9,7 +9,7 @@ namespace Workers
 		{
 			return this->sum;
 		}
-		void setSum()
+		virtual void setSum()
 		{
 			this->sum = 0;
 		}
@@ -85,7 +85,7 @@ namespace Workers
 			}
 			return this->acad;
 		}
-		void setSuma()
+		void setSum()
 		{
 			for (int i = 0; i < acad.size(); i++)
 			{
@@ -124,7 +124,7 @@ namespace Workers
 		{
 			this->nrCarbuni = carbuni;
 		}
-		void setSuma(Elf e, Troll t)
+		void setSum(Elf e, Troll t)
 		{
 			this->sum = t.getSum() + e.getSum();
 		}
