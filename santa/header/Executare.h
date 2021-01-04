@@ -281,7 +281,7 @@ namespace Executare
 		cout << "1] Afisati scrisorile copiilor ( minim 5 copii ).\n";
 		cout << "2] Sa se afiseze fiecare copil ce cadou va primi.\n";
 		cout << "3] Sa se afiseze cate ambalaje pentru fete si cate ambalaje pentru baieti au folosit trolii.\n";
-		cout << "4] Sa se afiseze suma totala pentru fiecare copil si suma totala folosita.\n";
+		cout << "4] Sa se afiseze suma extra folosita.\n";
 		cout << "5] Sa se afiseze traseul pe care l-a urmat Mos Craciun si distanta parcursa ( minim 4 tari ).\n";
 	}
 
@@ -393,11 +393,10 @@ namespace Executare
 				}
 			}
 		}
-		for (Classes::Cadou c : cad)
-		{
-			c.Afisare(c);
-			cout << endl;
-		}
+		
 		return cad;
 	}
+
+	
+
 }

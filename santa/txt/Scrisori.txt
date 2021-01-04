@@ -1,7 +1,7 @@
 Bahadur
 Waqar
 8
-alastru
+albastru
 Abu_Dhabi
 nintendo_switch
 Jenga
@@ -10,7 +10,7 @@ play-Doh
 Irfan
 Latifah
 16
-alastru
+albastru
 Ajman
 Catan
 Villanous
@@ -21,7 +21,7 @@ Illusion
 Mostafa
 Bushra
 14
-alastru
+albastru
 Dubai
 Unstable_Unicorns
 Fox_in_the_Forest_Game
@@ -44,5 +44,5 @@ Aminah
 6
 roz
 Fujairah
-Uno
+Cards_Against_Humanity
 .

@@ -178,6 +178,12 @@ class Jucarie
 		vector<string> getItems() { return this->items; }
 		double getCost() { return this->cost; }
 
+		int ItemSize()
+		{
+			return this->items.size();
+			
+		}
+
 		void setColour(string culoare) {  this->culoare=culoare; }
 
 		void addToItems(Jucarie new_item);
@@ -239,7 +245,7 @@ class Jucarie
 	}
 	void Cadou::Afisare(const Cadou& c)
 	{
-		cout << "\n" << c.nume << " " << c.prenume << ", " << c.varsta << ", din orasul  " << c.oras << " a primit:\n";
+		cout << "\n" << c.nume << " " << c.prenume << ", " << c.varsta << " ani , din orasul  " << c.oras << " a primit:\n";
 
 		for (Jucarie i : c.items)
 		{
