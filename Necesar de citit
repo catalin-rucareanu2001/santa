@@ -9,6 +9,7 @@ Workers.h - 195 linii - mostenire; this-> pointer; getters/setters; specificator
 Classes.h - 487 linii - class; constructor( cu si fara parametri); destructor; friend class; this-> pointer; ///static member/// ; 
 		      - getters/setters; specificatori de acces; overload
 Executare.h - 574 linii - templates; try,throw,catch; 
+total 1474 linii
 
 Am tinut sa notez acest lucru in caz ca dispare ceva din acest github sa pot determina cu usurinta
 
