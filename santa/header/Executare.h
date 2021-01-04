@@ -342,12 +342,10 @@ namespace Executare
 					{
 						cadoul.addToItems(b.at(j));
 						b.at(j).removeFromInventory();
-						//cout << c<<" ";
 					}
 
 				}
 			}
-			//cout <<  " \n";
 		}
 		return cadoul;
 	}
@@ -382,13 +380,11 @@ namespace Executare
 					if (m.at(j).IsCuminte())
 					{
 						(*sum).at(i) = 100;
-						//cout << sum.at(i) << endl;
 					}
 					else
 					{
 						(*sum).at(i) = 10;
 					}
-					//cout << "copilul :" << m.at(i).getName() << " " << m.at(i).getSurname() << " \n";
 					cad.push_back(IsEq2(s.at(i), jucarie, (*sum).at(j)));
 				}
 			}
@@ -396,7 +392,5 @@ namespace Executare
 		
 		return cad;
 	}
-
-	
 
 }
