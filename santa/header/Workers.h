@@ -1,14 +1,22 @@
 
+/// <summary>
+/// clasa din care celelalte 3 vor mostenii suma de bani folosita.
+/// </summary>
 namespace Workers
 {
 	class Worker
 	{
 	public:
 		Worker();
+
 		double getSum()
 		{
 			return this->sum;
 		}
+
+		/// <summary>
+		/// virtual void function
+		/// </summary>
 		virtual void setSum()
 		{
 			this->sum = 0;
@@ -23,6 +31,11 @@ namespace Workers
 		this->sum = 0;
 	}
 
+	/// <summary>
+	/// clasa troll
+	/// fata de Worker contine si:
+	/// nr carbuni, nr ambalaje fete, nr ambalaje baieti
+	/// </summary>
 	class Troll : public Worker
 	{
 	public:
@@ -33,6 +46,7 @@ namespace Workers
 			cout << "Ambaleje pt fete: " << fete << endl;
 			cout << "Ambaleje pt baieti: " << baieti << endl;
 		}
+
 		void Ambalare( Classes::Scrisoare &sc)
 		{
 			if (sc.getCuloare().compare("albastru")==0)
@@ -44,6 +58,7 @@ namespace Workers
 				this->fete++;
 			}
 		}
+
 		void Carbune(Classes::Mosu mos)
 		{
 			if (!mos.IsCuminte())
@@ -51,10 +66,16 @@ namespace Workers
 				this->nrCarbuni++;
 			}
 		}
+
 		int getCarbune()
 		{
 			return nrCarbuni;
 		}
+
+		/// <summary>
+		/// utilizarea funciei virtual void
+		/// </summary>
+		/// <returns></returns>
 		void setSum()
 		{
 			this->sum = 0.5 * nrCarbuni;
@@ -73,6 +94,11 @@ namespace Workers
 		this->nrCarbuni = 0;
 	}
 
+	/// <summary>
+	/// clasa elf
+	/// fata de Worker contine si:
+	/// vector cu nr acadele pt fiecare
+	/// </summary>
 	class Elf : public Worker
 	{
 	public:
@@ -83,23 +109,31 @@ namespace Workers
 			{
 				this->acad.push_back(sum.at(i) - cad.at(i).getCost());
 			}
+
 			return this->acad;
 		}
+
+		/// <summary>
+		/// utilizarea funciei virtual void
+		/// </summary>
+		/// <returns></returns>
 		void setSum()
 		{
 			for (int i = 0; i < acad.size(); i++)
 			{
 				this->sum += acad.at(i);
 			}
-			
 		}
+
 		int getAcadele()
 		{
 			int tot=0;
+
 			for (int i = 0; i < acad.size(); i++)
 			{
 				tot += acad.at(i);
 			}
+
 			return tot;
 		}
 	
@@ -112,7 +146,11 @@ namespace Workers
 
 
 
-
+	/// <summary>
+	/// clasa MissSanta
+	/// fata de Worker contine si:
+	/// nr carbuni, nr acadele
+	/// </summary>
 	class MissSanta : public Worker
 	{
 	public:
@@ -120,10 +158,17 @@ namespace Workers
 		{
 			this->nrAcadele = acadele;
 		}
+
 		void setCarb(int carbuni)
 		{
 			this->nrCarbuni = carbuni;
 		}
+
+		/// <summary>
+		/// utilizarea funciei virtual void
+		/// </summary>
+		/// <param name="e"></param>
+		/// <param name="t"></param>
 		void setSum(Elf e, Troll t)
 		{
 			this->sum = t.getSum() + e.getSum();
@@ -133,6 +178,7 @@ namespace Workers
 		{
 			return this->nrAcadele;
 		}
+
 		int getCarb()
 		{
 			return this->nrCarbuni ;

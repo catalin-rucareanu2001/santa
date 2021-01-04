@@ -6,8 +6,11 @@
 int main()
 {
 	int choice;
+
 	Executare::Cerinta();
+
 	cout << endl << endl << "\tREZOLVARE:" << endl << endl;
+
 	/// <summary>
 	/// ex 1
 	/// </summary>
@@ -50,6 +53,7 @@ int main()
 	{
 		cout << "\nCadou pt copiii cuminti: " << c_good << "\nCadou pt copiii obraznici: " << c_naugthy << "\n";
 	}
+
 	/// <summary>
 	/// ex 2
 	/// </summary>
@@ -58,14 +62,29 @@ int main()
 
 	vector<int> sum, poz;
 	vector<Classes::Cadou> cad;
+
 	cad = Executare::Verificare(scris, mos, juc, &sum);
 
+	/// <summary>
+	/// alocarea de cadouri default pentru copiii:
+	/// </summary>
+	/// <returns></returns>
 	for (int i=0;i<cad.size();i++)
 	{
+
+		/// <summary>
+		/// verificam daca lista de cadouri primita este goala( n-a avut dorinte sau acestea au fost peste suma alocata)
+		/// </summary>
+		/// <returns></returns>
 		if (cad.at(i).ItemSize()==0)
 		{
 			for (int j = 0; j < juc.size(); j++)
 			{
+
+				/// <summary>
+				/// good
+				/// </summary>
+				/// <returns></returns>
 				if (mos.at(i).IsCuminte())
 				{
 					if (juc.at(j).getName().compare(c_good)==0)
@@ -73,6 +92,11 @@ int main()
 						cad.at(i).addToItems(juc.at(j));
 					}
 				}
+
+				/// <summary>
+				/// naughty
+				/// </summary>
+				/// <returns></returns>
 				else
 				{
 					if (juc.at(j).getName().compare(c_naugthy) == 0)
@@ -84,7 +108,9 @@ int main()
 			}
 			
 		}
+
 		cad.at(i).Afisare(cad.at(i));
+
 		for (int l:poz)
 		{
 			if (i == l)
@@ -92,21 +118,26 @@ int main()
 				cout << "+1 Carbune\n";
 			}
 		}
+
 		cout << endl;
 	}
 
 	Workers::Elf elful;
 	vector <int> acadele = elful.Acadele(cad, sum);
+
 	for (int i = 0; i < acadele.size(); i++)
 	{
 		cout << acadele.at(i) << " acadele primeste: "<<scris.at(i).getName()<<" "<< scris.at(i).getSurname()<<"\n";
 	}
+
 	elful.setSum();
+
 	/// <summary>
 	/// ex 3
 	/// </summary>
 	/// <returns></returns>
 	cout << "\n3] Numarul de ambalaje fete/baieti + nr carbuni sunt: \n";
+
 	Workers::Troll  trolul;
 
 	for (int i = 0; i < scris.size(); i++)
@@ -114,22 +145,28 @@ int main()
 		trolul.Ambalare(scris.at(i));
 		trolul.Carbune(mos.at(i));
 	}
+
 	cout << endl;
 	trolul.AfisAmbaleje();
 	trolul.setSum();
+
 	cout << "Nr carbuni folositi: " << trolul.getCarbune() << endl;
+
 	/// <summary>
 	/// ex 4
 	/// </summary>
 	/// <returns></returns>
 	cout << "\n4] Suma extra folosita de Doamna Craciun: \n";
+
 	Workers::MissSanta msSanta;
+
 	msSanta.setAcad(elful.getAcadele());
 	msSanta.setCarb(trolul.getCarbune());
 	msSanta.setSum(elful, trolul);
 
 	cout<<"\nDoamna Craciun produce : "<<msSanta.getAcad()<<" acadele si : "<< msSanta.getCarb()<<" carbuni\n";
 	cout << "Suma extra este: " << msSanta.getSum()<<" $\n";
+
 	/// <summary>
 	/// ex 5
 	/// </summary>
@@ -144,7 +181,10 @@ int main()
 	
 	
 	
-	
+	/// <summary>
+	/// eliberarea spatiului alocat pt vectori
+	/// </summary>
+	/// <returns></returns>
 	acadele.clear();
 	poz.clear();
 	cad.clear();

@@ -3,7 +3,9 @@ using namespace std;
 
 namespace Classes
 {
-	//-------------------------------Elemente din --------------------------------
+	//-------------------------------clasa jucariilor--------------------------------
+	///contine un nume o cantitate si un pret
+
 class Jucarie
 	{
 	private:
@@ -18,6 +20,10 @@ class Jucarie
 		int getAmount() { return this->cantitate; }
 		double getPrice() { return this->pret; }
 
+		/// <summary>
+		/// setters
+		/// </summary>
+		/// <param name="nume"></param>
 		void setName(string nume) { this->nume = nume; }
 		void setAmount(int cantitate) { this->cantitate = cantitate; }
 		void setPrice(double pret) { this->pret = pret; }
@@ -26,10 +32,19 @@ class Jucarie
 
 		void Afisare(const Jucarie& j);
 
+		/// <summary>
+		/// friend class
+		/// </summary>
 		friend class Cadou;
 
 	};
 
+	/// <summary>
+	/// constructor cu parametrii
+	/// </summary>
+	/// <param name="nume"></param>
+	/// <param name="cantitate"></param>
+	/// <param name="pret"></param>
 	Jucarie::Jucarie(string nume = "", int cantitate = -1, double pret = -1.0)
 	{
 		this->nume = nume;
@@ -37,16 +52,26 @@ class Jucarie
 		this->pret = pret;
 	}
 
+	/// <summary>
+	/// scaderea numarului de elemente din inventar
+	/// </summary>
 	void Jucarie::removeFromInventory()
 	{
 		this->cantitate--;
 	}
 
+	/// <summary>
+	/// afisarea jucariilor
+	/// </summary>
+	/// <param name="j"></param>
 	void Jucarie::Afisare(const Jucarie& j)
 	{
 		cout << " nume: " << j.nume << "\n cantitate: " << j.cantitate << "\n pret: " << j.pret << " $\n";
 	}
+
 	//---------------------------Copil & elemente derivate--------------------------
+	///claasa contine un nume un prenume un oras si o varsta
+
 	class Copil
 	{
 	public:
@@ -56,7 +81,7 @@ class Jucarie
 		string getSurname() { return this->prenume; }
 		string getCity() { return this->oras; }
 		int getAge() { return this->varsta; }
-
+		
 		void operator =(const Copil& copy);
 
 		void Afisare(const Copil& copy);
@@ -81,6 +106,10 @@ class Jucarie
 		this->varsta = varsta;
 	}
 
+	/// <summary>
+	/// overload al unui operator
+	/// </summary>
+	/// <param name="copy"></param>
 	void Copil::operator =(const Copil& copy)
 	{
 		this->nume = copy.nume;
@@ -94,6 +123,11 @@ class Jucarie
 		cout << copy.nume << " " << copy.prenume << " " << copy.varsta << " " << copy.oras << "\n";
 	}
 
+	/// <summary>
+	/// mostenire tip friend de la clasa copil
+	/// aceasta clasa contine caracteristicile clasei copil plus:
+	/// culoare si lista cadourilor cerute
+	/// </summary>
 	class Scrisoare : public Copil
 	{
 	public:
@@ -124,6 +158,10 @@ class Jucarie
 		this->culoare = culoare;
 	}
 
+	/// <summary>
+	/// copy constructor
+	/// </summary>
+	/// <param name="copy"></param>
 	Scrisoare::Scrisoare(const Copil& copy)
 	{
 		this->nume = copy.nume;
@@ -134,11 +172,19 @@ class Jucarie
 		this->lista = {};
 	}
 
+	/// <summary>
+	/// destructor
+	/// </summary>
 	Scrisoare::~Scrisoare()
 	{
 		this->lista.clear();
 	}
 
+	/// <summary>
+	/// verificarea daca un obiect de clasa scrisoare are aceleasi detalii ca un obiect de clasa copil
+	/// </summary>
+	/// <param name="c"></param>
+	/// <returns> bool </returns>
 	bool Scrisoare::operator ==(const Copil& c)
 	{
 		if (this->nume == c.nume && this->prenume == c.prenume && this->oras == c.oras && this->varsta == c.varsta)
@@ -151,16 +197,27 @@ class Jucarie
 		}
 	}
 
+	/// <summary>
+	/// afisarea scrisorilor
+	/// </summary>
+	/// <param name="l"></param>
 	void Scrisoare::Afisare(const Scrisoare& l)
 	{
 		cout << l.nume << " " << l.prenume << " " << l.varsta << " " << l.oras << " " << l.culoare << " ";
+
 		for (int i = 0; i < l.lista.size() - 1; i++)
 		{
 			cout << l.lista.at(i) << " ";
 		}
+
 		cout << l.lista.at(l.lista.size() - 1) << "\n";
 	}
 
+	/// <summary>
+	/// mostenire tip friend de la clasa copil
+	/// aceasta clasa contine caracteristicile clasei copil plus:
+	/// culoare, obiecte primite si cost
+	/// </summary>
 	class Cadou : public Copil
 	{
 	private:
@@ -174,6 +231,10 @@ class Jucarie
 
 		~Cadou();
 
+		/// <summary>
+		/// getters
+		/// </summary>
+		/// <returns></returns>
 		string getColour() { return this->culoare; }
 		vector<string> getItems() { return this->items; }
 		double getCost() { return this->cost; }
@@ -243,6 +304,11 @@ class Jucarie
 			return false;
 		}
 	}
+
+	/// <summary>
+	/// afisarea cadourilor
+	/// </summary>
+	/// <param name="c"></param>
 	void Cadou::Afisare(const Cadou& c)
 	{
 		cout << "\n" << c.nume << " " << c.prenume << ", " << c.varsta << " ani , din orasul  " << c.oras << " a primit:\n";
@@ -253,6 +319,10 @@ class Jucarie
 		}
 	}
 
+	/// <summary>
+	/// clasa comparatoare a doua obiecte de clasa copil
+	/// din nefericire, similar cu overload de operatori, nu a mai fost nevoie sa o folosesc dar o pastrez aici pentru a o comemora (pay respects)
+	/// </summary>
 	class DataComparator
 	{
 	public:
@@ -268,7 +338,10 @@ class Jucarie
 			}
 		}
 	};
-	//-------------------Clase pentru Orase si Drum
+
+	//-------------------Clase pentru Orase si Drum-----------
+	///clasa pt oras 
+	/// contine nume distante catre celelalte orase si visited care ne ofera posibilitatea de a vedea daca a fost vizitat acest oras
 	class Orase
 	{
 	public:
@@ -302,6 +375,10 @@ class Jucarie
 		int visited;
 	};
 
+	/// <summary>
+	/// afisare oras
+	/// </summary>
+	/// <param name="o"></param>
 	void Orase::Afis(const Orase& o)
 	{
 		cout << " " << o.nume << " ";
@@ -312,6 +389,14 @@ class Jucarie
 
 	}
 
+	/// <summary>
+	/// clasa drum 
+	/// contine drumul final
+	/// distanta intre orasul anterior si orasul actual + numele orasului
+	/// 
+	/// ca o alta optiune care ar putea include si partea de static in functionalitatea programului as fi putut face distanta ca fiind un membru static pe care l-am 
+	/// incrementa treptat cu noile valori si am elimina aceasta functionalitate din interiorul Executare::AfisareDrum(drumul); apelat in santa.cpp
+	/// </summary>
 	class Drum
 	{
 	public:
@@ -332,20 +417,43 @@ class Jucarie
 			return dist;
 		}
 
+	/// <summary>
+	/// static void incr(int d)
+	/// {
+	/// this->dist+=d;
+	/// }
+	/// 
+	/// static int getDist()
+	/// {
+	/// return this->dist;
+	/// }
+	/// </summary>
+	
 	private:
+
+		/// <summary>
+		/// static int dist
+		/// </summary>
 		int dist;
 		string oras;
 	};
 
 	//----------------------Mosu---------------------
-
+	///clasa pt Mosu
+	///mosteneste din clasa copil numele prenumele orasul si varsta si pe deasuprea mmai contine si un int de verificare a stadiului de cumintenie
 	class Mosu : public Copil
 	{
+
+	/// <summary>
+	/// initial aceasta clasa era intended sa se afle in Workers.hpp dar in momentul cand am mutat-o acolo a facut fite si nu a mai mers programul
+	/// </summary>
 	public:
 		Mosu(string nume, string prenume, string oras, int varsta, int cuminte);
+
 		void Afisare() {
 			cout << this->nume << " " << this->prenume << " " << this->oras << " " << this->varsta << " " << this->cuminte << endl;
 		}
+
 		int IsCuminte()
 		{
 			if (cuminte == 1)
@@ -357,12 +465,22 @@ class Jucarie
 				return 0;
 			}
 		}
+
 	private:
 		int cuminte;
 	};
 
 	Mosu::Mosu(string nume, string prenume, string oras, int varsta, int cuminte) : Copil{ nume,  prenume,  oras,  varsta }
 	{
+
+		/// <summary>
+		/// this-> pointer
+		/// </summary>
+		/// <param name="nume"></param>
+		/// <param name="prenume"></param>
+		/// <param name="oras"></param>
+		/// <param name="varsta"></param>
+		/// <param name="cuminte"></param>
 		this->cuminte = cuminte;
 	}
 
