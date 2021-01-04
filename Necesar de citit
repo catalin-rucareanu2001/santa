@@ -1,0 +1,16 @@
+Am 2 Branches, Good si Master
+Master nu este cel bun, cel bun asa cum ii spune si numele este Good
+
+Am 4 fisiere .h si un fisier .cpp:
+
+santa.cpp - 208 linii 
+IncNecesar.h - 10 linii
+Workers.h - 195 linii - mostenire; this-> pointer; getters/setters; specificatori de acces; overrite; virtual function
+Classes.h - 487 linii - class; constructor( cu si fara parametri); destructor; friend class; this-> pointer; ///static member/// ; 
+		      - getters/setters; specificatori de acces; overload
+Executare.h - 574 linii - templates; try,throw,catch; 
+total 1474 linii
+
+Am tinut sa notez acest lucru in caz ca dispare ceva din acest github sa pot determina cu usurinta
+
+
