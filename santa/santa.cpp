@@ -92,13 +92,12 @@ int main()
 						cad.at(i).addToItems(juc.at(j));
 					}
 				}
-
-				/// <summary>
-				/// naughty
-				/// </summary>
-				/// <returns></returns>
 				else
 				{
+					/// <summary>
+					/// naughty
+					/// </summary>
+					/// <returns></returns>
 					if (juc.at(j).getName().compare(c_naugthy) == 0)
 					{
 						cad.at(i).addToItems(juc.at(j));
