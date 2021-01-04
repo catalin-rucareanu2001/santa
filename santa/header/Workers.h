@@ -9,6 +9,10 @@ namespace Workers
 		{
 			return this->sum;
 		}
+		void setSum()
+		{
+			this->sum = 0;
+		}
 
 	protected:
 		double sum;
