@@ -319,26 +319,6 @@ class Jucarie
 		}
 	}
 
-	/// <summary>
-	/// clasa comparatoare a doua obiecte de clasa copil
-	/// din nefericire, similar cu overload de operatori, nu a mai fost nevoie sa o folosesc dar o pastrez aici pentru a o comemora (pay respects)
-	/// </summary>
-	class DataComparator
-	{
-	public:
-		bool operator ()(const Copil& c1, const Copil& c2)
-		{
-			if (c1.varsta < c2.varsta || c1.oras.compare(c2.oras) < 0 || c1.prenume.compare(c2.prenume) < 0 || c1.nume.compare(c2.nume) < 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-	};
-
 	//-------------------Clase pentru Orase si Drum-----------
 	///clasa pt oras 
 	/// contine nume distante catre celelalte orase si visited care ne ofera posibilitatea de a vedea daca a fost vizitat acest oras
