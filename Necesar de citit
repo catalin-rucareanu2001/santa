@@ -6,10 +6,10 @@ Am 4 fisiere .h si un fisier .cpp:
 santa.cpp - 208 linii 
 IncNecesar.h - 10 linii
 Workers.h - 195 linii - mostenire; this-> pointer; getters/setters; specificatori de acces; overrite; virtual function
-Classes.h - 487 linii - class; constructor( cu si fara parametri); destructor; friend class; this-> pointer; ///static member/// ; 
+Classes.h - 467 linii - class; constructor( cu si fara parametri); destructor; friend class; this-> pointer; ///static member/// ; 
 		      - getters/setters; specificatori de acces; overload
 Executare.h - 574 linii - templates; try,throw,catch; 
-total 1474 linii
+total 1454 linii
 
 Am tinut sa notez acest lucru in caz ca dispare ceva din acest github sa pot determina cu usurinta
 
