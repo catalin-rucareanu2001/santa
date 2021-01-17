@@ -86,7 +86,6 @@ class Jucarie
 
 		void Afisare(const Copil& copy);
 
-		friend class DataComparator;
 		friend class Scrisoare;
 		friend class Cadou;
 
